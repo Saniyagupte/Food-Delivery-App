@@ -6,11 +6,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.denzcoskun.imageslider.constants.ScaleTypes
 import com.denzcoskun.imageslider.interfaces.ItemClickListener
 import com.denzcoskun.imageslider.models.SlideModel
 import com.example.foodie.R
 import com.example.foodie.databinding.FragmentHomeBinding
+import com.example.foodie.adapter.PopularAdapter
 
 class HomeFragment : Fragment() {
     private lateinit var binding: FragmentHomeBinding
@@ -45,5 +47,16 @@ class HomeFragment : Fragment() {
                 Toast.makeText(requireContext(), itemMessage, Toast.LENGTH_SHORT).show()
             }
         })
+
+        // Corrected list initialization
+        val foodName = listOf("Pancake", "Sandwich", "Momos", "Burger")
+        val price = listOf("$5", "$7", "$8", "$9")  // Fixed "lostOf" typo
+        val popularFoodImages = listOf(R.drawable.menu1, R.drawable.menu2, R.drawable.menu3, R.drawable.menu4)
+
+        // Corrected variable name in adapter initialization
+        val adapter = PopularAdapter(foodName, price, popularFoodImages)
+
+        binding.PopularRecyclerView.layoutManager = LinearLayoutManager(requireContext())
+        binding.PopularRecyclerView.adapter = adapter
     }
 }

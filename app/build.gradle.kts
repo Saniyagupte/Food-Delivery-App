@@ -56,4 +56,5 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
 
     implementation("com.github.denzcoskun:ImageSlideshow:0.1.2")
+    implementation ("com.google.android.gms:play-services-auth:20.7.0")
 }

@@ -47,17 +47,17 @@ app.post('/login', async (req, res) => {
 
             // Check if passwords match
             if (dbPassword !== inputPassword) {
-                console.log("❌ Password mismatch");
+                console.log(" Password mismatch");
                 return res.status(401).json({ message: "Invalid credentials" });
             }
 
             return res.status(200).json({ message: "Login successful!", user });
         } else {
-            console.log("❌ User not found");
+            console.log(" User not found");
             return res.status(401).json({ message: "User not found" });
         }
     } catch (error) {
-        console.error("❌ Login Error:", error);
+        console.error(" Login Error:", error);
         res.status(500).json({ message: "Server error" });
     }
 });
@@ -83,7 +83,7 @@ app.post('/signup', async (req, res) => {
         console.log("🔍 Checking if email already exists:", existingUser);
 
         if (existingUser.rows && existingUser.rows.length > 0) {
-            console.log("❌ Email already registered");
+            console.log(" Email already registered");
             return res.status(409).json({ message: "Email already registered" });
         }
 
@@ -91,12 +91,12 @@ app.post('/signup', async (req, res) => {
         const insertQuery = `INSERT INTO users (USERNAME, EMAIL, PASSWORD) VALUES (:name, :email, :password)`;
         const insertResult = await db.execute(insertQuery, { name, email, password });
 
-        console.log("✅ User registered successfully:", insertResult);
+        console.log(" User registered successfully:", insertResult);
 
         return res.status(201).json({ message: "Signup successful!", user: { name, email } });
 
     } catch (error) {
-        console.error("❌ Signup Error:", error);
+        console.error(" Signup Error:", error);
         res.status(500).json({ message: "Server error" });
     }
 });
@@ -105,6 +105,6 @@ app.post('/signup', async (req, res) => {
 
 
 // Start Server
-const server = app.listen(1234, '192.168.0.101', () => {
-    console.log('🚀 Server running on http://192.168.0.101:1234');
+const server = app.listen(1234, '0.0.0.0', () => {
+    console.log(` Server running on http://0.0.0.0:1234`);
 });

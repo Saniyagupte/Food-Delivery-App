@@ -98,7 +98,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/googleLbutton"
         android:layout_width="152dp"
         android:layout_height="57dp"
         android:layout_marginStart="56dp"
@@ -118,7 +118,7 @@
         android:text="Facebook"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/button"
+        app:layout_constraintStart_toEndOf="@+id/googleLbutton"
         app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
     <Button
@@ -129,7 +129,7 @@
         android:text="Login"
         app:layout_constraintEnd_toEndOf="@+id/button2"
         app:layout_constraintHorizontal_bias="0.481"
-        app:layout_constraintStart_toStartOf="@+id/button"
+        app:layout_constraintStart_toStartOf="@+id/googleLbutton"
         app:layout_constraintTop_toBottomOf="@+id/button2" />
 
     <TextView

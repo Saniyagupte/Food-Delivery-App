@@ -19,20 +19,19 @@ class CartFragment : Fragment() {
     ): View {
         binding = FragmentCartBinding.inflate(inflater, container, false)
 
-        val adapter = CartAdapter(
-            mutableListOf("Pancakes", "Sandwiches", "Momos", "Burgers" , "Pancakes", "Sandwiches", "Momos", "Burgers"),
-            mutableListOf("$5", "$8", "$9", "$10" , "$5", "$8", "$9", "$10"),
-            mutableListOf(
-                R.drawable.menu1,
-                R.drawable.menu2,
-                R.drawable.menu3,
-                R.drawable.menu4,
-                R.drawable.menu1,
-                R.drawable.menu2,
-                R.drawable.menu3,
-                R.drawable.menu4
-            )
+        val cartFoodName = listOf("Pancakes", "Sandwiches", "Momos", "Burgers" , "Pancakes", "Sandwiches", "Momos", "Burgers")
+        val cartItemPrice = listOf("$5", "$8", "$9", "$10" , "$5", "$8", "$9", "$10")
+        val cartImage = listOf(
+            R.drawable.menu1,
+            R.drawable.menu2,
+            R.drawable.menu3,
+            R.drawable.menu4,
+            R.drawable.menu1,
+            R.drawable.menu2,
+            R.drawable.menu3,
+            R.drawable.menu4
         )
+        val adapter = CartAdapter(ArrayList(cartFoodName) , ArrayList(cartItemPrice) , ArrayList(cartImage)        )
 
         binding.cartRecyclerView.layoutManager = LinearLayoutManager(requireContext())
         binding.cartRecyclerView.adapter = adapter

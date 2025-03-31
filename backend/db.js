@@ -1,9 +1,9 @@
 const oracledb = require('oracledb');
 
 const dbConfig = {
-    user: "C##FOODIE_USER",
-    password: "6129",
-    connectString: "192.168.0.101:1521/XE"
+    user: "",
+    password: "",
+    connectString: ""
 };
 
 

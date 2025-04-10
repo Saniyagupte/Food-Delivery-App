@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.FoodieApp"
+        android:usesCleartextTraffic="true"
+        tools:targetApi="31">
+        <activity
+            android:name="com.foodie.user.FoodDetailActivity"
+            android:exported="true" />
+        <!-- Launcher/Main Activity: the choice screen -->
+        <activity
+            android:name="com.foodie.MainActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.FoodieApp">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity> <!-- ✅ User App Main Activity -->
+        <activity
+            android:name="com.foodie.user.UserMainActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.FoodieApp" /> <!-- ✅ Admin Panel Activity -->
+        <activity
+            android:name="com.foodie.admin.AdminMainActivity"
+            android:exported="true"
+            android:label="Admin Panel"
+            android:theme="@style/Theme.FoodieApp" />
+
+        <meta-data
+            android:name="com.google.android.gms.auth.api.signin"
+            android:value="@string/default_web_client_id" /> <!-- User -->
+        <activity
+            android:name="com.foodie.user.Splash_screen"
+            android:exported="true" /> <!-- Login Activity -->
+        <activity
+            android:name="com.foodie.user.LoginActivity"
+            android:exported="false" /> <!-- Signup Activity -->
+        <activity
+            android:name="com.foodie.user.SignupActivity"
+            android:exported="false" /> <!-- Choose Location Activity -->
+        <activity
+            android:name="com.foodie.user.ChooseLocationActivity"
+            android:exported="false" /> <!-- Payout Activity -->
+        <activity
+            android:name="com.foodie.user.PayoutActivity"
+            android:exported="false" /> <!-- Admin -->
+        <activity
+            android:name="com.foodie.admin.AllItemActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.foodie.admin.AddActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.foodie.admin.AdminSignupActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.foodie.admin.AdminLoginActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.foodie.admin.Splash_screen"
+            android:exported="false" />
+    </application>
+
+</manifest>

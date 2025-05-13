@@ -1,6 +1,7 @@
 package com.foodie.user
 
 import android.content.Intent
+import android.util.Log
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -45,17 +46,22 @@ class MenuBottomSheetFragment : BottomSheetDialogFragment() {
                             id = item.id,  // Correctly use the ID from the API response
                             name = item.name,
                             price = item.price,
-                            description = "No description available", // Fallback
-                            ingredients = "Not listed", // Fallback
+                            description = "No description available",
+                            ingredients = "Not listed",
                             imageBase64 = item.imageBase64
+
                         )
+                    }
+
+                    // 🔍 DEBUG LOG: Check if IDs are correct
+                    for (item in userItems) {
+                        Log.d("MenuDebug", "Item: ${item.name}, ID: ${item.id}")
                     }
 
                     val adapter = MenuAdapter(userItems)
                     binding.menuRecyclerView.layoutManager = LinearLayoutManager(requireContext())
                     binding.menuRecyclerView.adapter = adapter
 
-                    // Handle item click to navigate to FoodDetailActivity
                     adapter.setOnItemClickListener { foodItem ->
                         val intent = Intent(requireContext(), FoodDetailActivity::class.java)
                         intent.putExtra("id", foodItem.id)  // Pass the ID to FoodDetailActivity
@@ -72,4 +78,5 @@ class MenuBottomSheetFragment : BottomSheetDialogFragment() {
             }
         })
     }
+
 }

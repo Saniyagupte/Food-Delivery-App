@@ -6,7 +6,6 @@ import android.util.Base64
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.foodie.user.FoodDetailActivity
 import com.foodie.user.model.FoodItem
 import com.foodie.foodieapp.databinding.MenuItemBinding
 
@@ -33,7 +32,7 @@ class MenuAdapter(private val menuItems: List<FoodItem>) : RecyclerView.Adapter<
     inner class MenuViewHolder(private val binding: MenuItemBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(item: FoodItem) {
             binding.menuFoodName.text = item.name
-            binding.menuPrice.text = item.price
+            binding.menuPrice.text = String.format("$ %.2f", item.price.toDouble())
 
             try {
                 val imageBytes = Base64.decode(item.imageBase64, Base64.DEFAULT)

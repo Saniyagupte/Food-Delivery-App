@@ -1,5 +1,5 @@
 [versions]
-agp = "8.9.0"
+agp = "8.8.0"
 kotlin = "2.0.21"
 coreKtx = "1.15.0"
 junit = "4.13.2"
@@ -17,7 +17,11 @@ activity = "1.10.1"              # Added for androidx.activity.ktx (often same a
 navigation = "2.7.7"             # Added for androidx.navigation artifacts
 retrofit = "2.11.0"
 materialVersion = "1.12.0"
-activityVersion = "1.10.1"              # Added for Retrofit and its converters
+activityVersion = "1.10.1"
+media3CommonKtx = "1.6.1"
+firebaseAuthKtx = "23.2.0"
+firebaseFirestoreKtx = "25.1.3"
+playServicesMaps = "19.2.0"              # Added for Retrofit and its converters
 # -----------------------
 
 [libraries]
@@ -47,7 +51,11 @@ androidx-navigation-ui-ktx = { group = "androidx.navigation", name = "navigation
 squareup-retrofit2 = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
 squareup-converter-gson = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofit" }
 material = { group = "com.google.android.material", name = "material", version.ref = "materialVersion" }
-androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activityVersion" } # Often uses same version as retrofit
+androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activityVersion" }
+androidx-media3-common-ktx = { group = "androidx.media3", name = "media3-common-ktx", version.ref = "media3CommonKtx" }
+firebase-auth-ktx = { group = "com.google.firebase", name = "firebase-auth-ktx", version.ref = "firebaseAuthKtx" }
+firebase-firestore-ktx = { group = "com.google.firebase", name = "firebase-firestore-ktx", version.ref = "firebaseFirestoreKtx" }
+play-services-maps = { group = "com.google.android.gms", name = "play-services-maps", version.ref = "playServicesMaps" } # Often uses same version as retrofit
 # ------------------------
 
 [plugins]

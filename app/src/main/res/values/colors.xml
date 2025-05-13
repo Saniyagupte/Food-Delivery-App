@@ -7,4 +7,27 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="background_light">#F5F5F5</color>
+<!--    <color name="price_color">#FF5722</color>-->
+    <color name="status_success">#4CAF50</color>
+<!--    <color name="text_primary">#000000</color>-->
+    <color name="card_background">#FFFFFF</color>
+    <color name="donation_button_color">#FF4081</color>
+    <color name="red">#FF0000</color>
+    <color name="green">#4CAF50</color>
+    <color name="colorPrimary">#FF5722</color>
+    <color name="text_primary">#212121</color>
+    <color name="text_secondary">#757575</color>
+    <color name="price_color">#2196F3</color>
+    <color name="rating_bg">#FFF3E0</color>
+    <color name="rating_text">#FFA000</color>
+
+
+    <color name="divider">#EEEEEE</color>
+
+
+
+    <color name="color_error">#B00020</color>
+    <color name="chip_status_background">#E8F5E9</color>
+
 </resources>

@@ -23,15 +23,15 @@ class SignupActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         // Already have an account?
-        binding.alreadyhavebutton.setOnClickListener {
+        binding.loginLink.setOnClickListener {
             startActivity(Intent(this, LoginActivity::class.java))
         }
 
         // Create Account button
-        binding.button6.setOnClickListener {
+        binding.signUpButton.setOnClickListener {
             val name = binding.editTextTextName.text.toString().trim()
-            val email = binding.editTextTextEmailAddress5.text.toString().trim()
-            val password = binding.editTextTextPassword3.text.toString().trim()
+            val email = binding.editTextTextEmailAddress.text.toString().trim()
+            val password = binding.editTextTextPassword.text.toString().trim()
 
             if (name.isNotEmpty() && email.isNotEmpty() && password.isNotEmpty()) {
                 signupUser(name, email, password)
@@ -71,3 +71,4 @@ class SignupActivity : AppCompatActivity() {
         })
     }
 }
+

@@ -3,22 +3,34 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
 
     <application
+        android:name="com.foodie.FoodieApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/ic_food_donation_logo"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/ic_food_donation_logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.FoodieApp"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
+        
+        <!-- Google Maps API Key -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyATi8PqlfwWk-uYFqybQFvgHc-a0bSVtDg" />
+            
+        <activity
+            android:name="com.foodie.DonationActivity"
+            android:exported="false" />
         <activity
             android:name="com.foodie.user.FoodDetailActivity"
-            android:exported="true" />
-        <!-- Launcher/Main Activity: the choice screen -->
+            android:exported="true" /> <!-- Launcher/Main Activity: the choice screen -->
         <activity
             android:name="com.foodie.MainActivity"
             android:exported="true"
@@ -32,6 +44,7 @@
         </activity> <!-- ✅ User App Main Activity -->
         <activity
             android:name="com.foodie.user.UserMainActivity"
+            android:windowSoftInputMode="adjustResize"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.FoodieApp" /> <!-- ✅ Admin Panel Activity -->
@@ -40,6 +53,9 @@
             android:exported="true"
             android:label="Admin Panel"
             android:theme="@style/Theme.FoodieApp" />
+
+
+
 
         <meta-data
             android:name="com.google.android.gms.auth.api.signin"
@@ -56,6 +72,8 @@
         <activity
             android:name="com.foodie.user.ChooseLocationActivity"
             android:exported="false" /> <!-- Payout Activity -->
+
+
         <activity
             android:name="com.foodie.user.PayoutActivity"
             android:exported="false" /> <!-- Admin -->
@@ -74,6 +92,20 @@
         <activity
             android:name="com.foodie.admin.Splash_screen"
             android:exported="false" />
+        <!-- Donation Activities -->
+        <activity
+            android:name="com.foodie.donation.SplashActivity"
+            android:exported="false"
+            android:theme="@style/Theme.FoodieApp" />
+        <activity
+            android:name="com.foodie.donation.MainActivity"
+            android:exported="false"
+            android:theme="@style/Theme.FoodieApp" />
     </application>
 
 </manifest>
+
+
+
+
+

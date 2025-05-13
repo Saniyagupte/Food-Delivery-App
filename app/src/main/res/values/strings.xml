@@ -2,6 +2,16 @@
     <string name="app_name">FoodieApp</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="default_web_client_id">1080882515188-4e67d1hocasbq1d2b0bgid2dvvgenbls.apps.googleusercontent.com</string>
+    <string name="maps_api_key">AIzaSyATi8PqlfwWk-uYFqybQFvgHc-a0bSVtDg</string>
+    <string name="add_menu_item">Add Item</string>
+    <string name="all_items">All Items</string>
+    <string name="orders">Orders</string>
+    <string name="profile">Profile</string>
+    <string name="add_menu_icon_desc">Add menu icon</string>
 
-
+    <string name="add_menu_icon">Add menu icon</string>
+    <!--    <string name="dont_have_account">Don\'t have an account? <b>Sign Up</b></string>-->
+    <string name="decorative_wave_background">Decorative wave background</string>
+    <string name="app_logo">App logo</string>
 </resources>
+

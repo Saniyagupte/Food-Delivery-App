@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  oracle-db:
+    image: gvenzl/oracle-xe:21-slim
+    container_name: foodie-oracle-db
+    environment:
+      - ORACLE_PASSWORD=6129
+      - ORACLE_DATABASE=XE
+      - APP_USER=C##FOODIE_USER
+      - APP_USER_PASSWORD=6129
+    ports:
+      - "1521:1521"
+    volumes:
+      - oracle-data:/opt/oracle/oradata
+    healthcheck:
+      test: ["CMD", "sqlplus", "-L", "C##FOODIE_USER/6129@//localhost:1521/XE", "SELECT 1 FROM DUAL"]
+      interval: 10s
+      timeout: 10s
+      retries: 3
+    restart: unless-stopped
+
+volumes:
+  oracle-data:
+    driver: local 

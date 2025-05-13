@@ -94,7 +94,7 @@ class AddActivity : AppCompatActivity() {
             }
 
             override fun onFailure(call: Call<AddFoodItemResponse>, t: Throwable) {
-                Toast.makeText(this@AddActivity, "🚫 Failed: ${t.message}", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@AddActivity, " Failed: ${t.message}", Toast.LENGTH_SHORT).show()
             }
         })
     }

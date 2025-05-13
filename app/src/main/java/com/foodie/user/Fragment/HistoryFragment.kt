@@ -32,7 +32,7 @@ class HistoryFragment : Fragment() {
     }
 
     private fun setupRecyclerView (){
-        val buyAgainFoodName = arrayListOf("Food 1 " , "Food 2 " ,  "Food 3 ")
+        val buyAgainFoodName = arrayListOf("Pancakes " , "Sandwich " ,  "Momos ")
         val buyAgainFoodPrice = arrayListOf("$10 " , "$20" ,  "$30")
         val buyAgainFoodImage = arrayListOf(R.drawable.menu1 , R.drawable.menu2, R.drawable.menu3)
         buyAgainAdapter = BuyAgainAdapter(buyAgainFoodName , buyAgainFoodPrice , buyAgainFoodImage)

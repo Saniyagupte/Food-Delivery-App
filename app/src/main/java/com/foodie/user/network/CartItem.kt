@@ -5,5 +5,6 @@ import com.foodie.user.model.FoodItem
 data class CartItem(
     val cartId: Int,
     val userId: Int,
-    val foodItem: FoodItem
+    val foodItem: FoodItem,
+    var quantity: Int
 )

@@ -15,6 +15,9 @@ interface ApiService {
     @GET("/users/{id}")
     fun getUser(@Path("id") id: Int): Call<User>
 
+    @POST("/api/auth/google") // Adjust the endpoint URL as needed
+    fun googleSignIn(@Body request: GoogleSignInRequest): Call<AuthResponse>
+
     @POST("/signup")
     fun signupUser(@Body signupRequest: SignupRequest): Call<SignupResponse>
 
@@ -27,6 +30,27 @@ interface ApiService {
     @POST("/cart/add")
     fun addToCart(@Body request: CartRequest): Call<ApiResponse>
 
-    @GET("/cart/{userId}")
-    fun getCartItems(@Path("userId") userId: Int): Call<List<FoodItem>>
+    @GET("cart/{userId}")
+    fun getCartItems(@Path("userId") userId: Int): Call<List<CartItem>>
+
+    @POST("/cart/increase")
+    fun increaseQuantity(@Body payload: Map<String, Int>): Call<CartActionResponse>
+
+    @POST("/cart/decrease")
+    fun decreaseQuantity(@Body payload: Map<String, Int>): Call<CartActionResponse>
+
+    @POST("/cart/delete")
+    fun deleteItem(@Body payload: Map<String, Int>): Call<CartActionResponse>
+
+    @POST("/orders/place")
+    fun placeOrder(@Body request: PlaceOrderRequest): Call<ApiResponse>
+
+    @GET("/search-recipes")
+    fun getRecipes(@Query("query") query: String): Call<SearchResponse>
+
+    @POST("/generate-recipe")
+    fun generateRecipe(@Body generateRequest: GenerateRequest): Call<GenerateResponse>
 }
+data class GenerateRequest(val query: String)
+
+data class GenerateResponse(val recipe: String)

@@ -5,7 +5,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitClient {  // Declared as an object for a singleton pattern
-    private const val BASE_URL = "http://192.168.1.3:1234/" // IMPORTANT: Verify this IP and port!
+    private const val BASE_URL = "http://192.168.0.103:1234/" // IMPORTANT: Verify this IP and port!
 
     private val retrofit: Retrofit by lazy {  // Lazy initialization ensures it's only created once
         Retrofit.Builder()

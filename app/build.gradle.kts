@@ -17,6 +17,11 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        
+        // Add Firebase configuration manually since we're not using the google-services plugin
+        manifestPlaceholders["firebase_api_key"] = "your-api-key"
+        buildConfigField("String", "FIREBASE_PROJECT_ID", "\"foodieapp\"")
+        buildConfigField("String", "FIREBASE_APP_ID", "\"your-app-id\"")
     }
     viewBinding {
         enable = true
@@ -24,7 +29,7 @@ android {
 
     buildTypes {
         release {
-            isMinifyEnabled = false
+            minifyEnabled = false  // Changed from isMinifyEnabled to minifyEnabled
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -41,17 +46,40 @@ android {
     buildFeatures {
         compose = true
         dataBinding = true
+        buildConfig = true
     }
 }
 
 dependencies {
 
+    implementation "com.google.android.gms:play-services-location:21.0.1"
+    implementation 'androidx.gridlayout:gridlayout:1.0.0'
+
+    implementation 'com.google.android.material:material:1.9.0'
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
     // Core & AppCompat
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat) // Now defined in TOML
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation("androidx.recyclerview:recyclerview:1.3.2")
     implementation("com.squareup.okhttp3:okhttp:4.12.0")
+    implementation ("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation ("com.squareup.okhttp3:okhttp:4.9.0")
+    implementation ("androidx.fragment:fragment-ktx:1.5.5")
+    implementation ("com.google.code.gson:gson:2.8.8")
+    implementation ("com.github.bumptech.glide:glide:4.11.0")
+    implementation(libs.play.services.maps)
+    implementation("com.google.android.gms:play-services-location:20.0.0")
+
+    annotationProcessor ("com.github.bumptech.glide:compiler:4.11.0") // For annotation processing
+
+    implementation ("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
+    implementation ("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation ("com.squareup.okhttp3:okhttp:4.9.0")
+
+
 
     // UI - Views System
     implementation("com.google.android.material:material:1.11.0")
@@ -100,7 +128,13 @@ dependencies {
     implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
     implementation ("com.squareup.okhttp3:logging-interceptor:4.9.0")
 
-
-
+    // Firebase BoM
+    implementation(platform("com.google.firebase:firebase-bom:32.5.0"))
+    
+    // Update Firebase dependencies to working versions
+    implementation("com.google.firebase:firebase-auth:22.3.1")
+    implementation("com.google.firebase:firebase-firestore:24.10.2")
+    implementation("com.google.firebase:firebase-analytics:21.5.1")
+    implementation("com.google.firebase:firebase-common:20.4.2")
 
 }

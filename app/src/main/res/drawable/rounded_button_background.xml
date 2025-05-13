@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Button Background Color -->
+    <solid android:color="@color/colorPrimary"/> <!-- You can change @color/colorPrimary to any color you prefer -->
+
+    <!-- Rounded Corners -->
+    <corners android:radius="16dp"/> <!-- Change the radius to make it more/less rounded -->
+
+
+</shape>

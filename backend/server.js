@@ -10,11 +10,11 @@ const app = express();
 const PORT = 1234;
 const oracledb = require('oracledb');
 
-const unsplashApiKey = 'L7BaYbAzk-751sMAmoZEGdOXVZfdAwWC92YNcso-Cf0';
+const unsplashApiKey = 'key';
 app.use(express.json());
 app.use(cors());
 
-const CO_API_KEY = 'A2rbRuuzQCrdqROsWeIofSuWR9MkhZQqnGmI6coq';
+const CO_API_KEY = 'key';
 
 const { CohereClient } = require('cohere-ai');
 
